@@ -11,6 +11,7 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
+import javafx.scene.chart.XYChart;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
@@ -32,18 +33,36 @@ public class ToileController implements Initializable {
     private static int noteMaximale = 20;
 
 
+    @FXML
+    Button vider = new Button();
+    @FXML
+    Button tracer = new Button();
+    @FXML
+    String comp1 = "Compétence 1 - Réaliser";
+    @FXML
+    String comp2 = "Compétence 2 - Optimiser";
+    @FXML
+    String com3 = "Compétence 3 - Administrer";
+    @FXML
+    String comp4 = "Compétence 4 - Gérer";
+    @FXML
+    String comp5 = "Compétence 5 - Conduire";
+    @FXML
+    String comp6 = "Compétence 6 - Collaborer";
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
     }
 
-    int getXRadarChart(double value, int axe ){
-        return (int) (rayonCercleExterieur + Math.cos(Math.toRadians(angleDepart - (axe-1)  * angleEnDegre)) * rayonCercleExterieur
-                *  (value / noteMaximale));
+    int getXRadarChart(double value, int axe) {
+        return (int) (rayonCercleExterieur + Math.cos(Math.toRadians(angleDepart - (axe - 1) * angleEnDegre)) * rayonCercleExterieur
+                * (value / noteMaximale));
+
     }
 
-    int getYRadarChart(double value, int axe ){
-        return (int) (rayonCercleExterieur - Math.sin(Math.toRadians(angleDepart - (axe-1)  * angleEnDegre)) * rayonCercleExterieur
-                *  (value / noteMaximale));
+    int getYRadarChart(double value, int axe) {
+        return (int) (rayonCercleExterieur - Math.sin(Math.toRadians(angleDepart - (axe - 1) * angleEnDegre)) * rayonCercleExterieur
+                * (value / noteMaximale));
     }
-
 }
+
